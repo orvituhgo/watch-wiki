@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.liButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F6F794;
+    width: 65px;
+    box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.link {
+    text-align: center;
+    margin: auto;
+    text-decoration: none;
+    color: #6c2bad;
+    width: 100%;
+    font: normal 400 16px Oswald, Helvetica, sans-serif;
+}

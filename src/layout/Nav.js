@@ -1,5 +1,5 @@
-import Button from '../atoms/GuideButton'
-import styles from '../../styles/molecules/Nav.module.css'
+import Button from '../components/atoms/GuideButton'
+import styles from '../styles/molecules/Nav.module.css'
 
 export default function Nav() {
     return (

@@ -36,6 +36,7 @@
     height: 300px;
 }
 
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 .carrosel::-webkit-scrollbar {
     display: none;
@@ -52,9 +53,35 @@
 
 .carroselItem {
     margin: auto 10px;
-    box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.25);
     border-radius: 4px;
     width: 200px;
     height: 280px;
     flex-shrink: 0;
+}
+
+.full_size {
+    min-height: 100vw;
+}
+
+.full_size>.carrosel {
+    flex-wrap: wrap;
+    height: 100%;
+    overflow-x: inherit;
+    overflow-y: auto;
+}
+
+.full_size>.carrosel>.carroselItem {
+    margin: 10px auto;
+    box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.25);
+    margin-bottom: 50px;
+    width: 320px;
+    height: 400px;
+}
+
+@media (max-width: 350px) {
+    .full_size>.carrosel>.carroselItem {
+        width: 285px;
+        height: 360px;
+    }
 }

@@ -10,8 +10,8 @@ export default function Home() {
     return (
         <div>
             <News />
-            {data && <Carrosel data={data} type='movies' carroselTitle='MOVIES' />}
-            {data && <Carrosel data={data} type='series' carroselTitle='SERIES' />}
+            {data && (<Carrosel data={data} type='movies' carroselTitle='MOVIES' />)}
+            {data && (<Carrosel data={data} type='series' carroselTitle='SERIES' />)}
             <Carrosel carroselTitle='ANIMES' />
         </div >
     );

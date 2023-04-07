@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function ApiResponse() {
+export default function Api() {
     const [data, setData] = useState([])
 
     useEffect(() => {
@@ -14,18 +14,18 @@ export default function ApiResponse() {
 
         const url = 'https://moviesdatabase.p.rapidapi.com/titles?year=2020'
 
-        // const apiConsuming = async () => {
-        //     const response = await fetch(url, options)
-        //     const data = await response.json()
-        //     return data.results
-        // }
-        // apiConsuming().then(setData)
+        const apiConsuming = async () => {
+            const response = await fetch(url, options)
+            const data = await response.json()
+            return data.results
+        }
+        apiConsuming().then(setData)
 
-        fetch(url, options)
-            .then(response => response.json())
-            .then(response => setData(response))
-            .then(console.log(data))
-            .catch(err => console.log(err));
+        // fetch(url, options)
+        //     .then(response => response.json())
+        //     .then(response => setData(response))
+        //     .then(console.log(data))
+        //     .catch(err => console.log(err));
     }, [data]);
 
     return data

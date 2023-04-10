@@ -84,4 +84,8 @@
         width: 285px;
         height: 360px;
     }
+
+    .full_size {
+        height: 500px;
+    }
 }

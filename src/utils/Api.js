@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Api() {
+export default function Api(pages) {
     const [data, setData] = useState([])
 
     useEffect(() => {
@@ -12,21 +12,21 @@ export default function Api() {
             }
         };
 
-        const url = 'https://moviesdatabase.p.rapidapi.com/titles?year=2020'
-
+        const url = `https://moviesdatabase.p.rapidapi.com/titles?year=2021&page=${pages}`
         const apiConsuming = async () => {
             const response = await fetch(url, options)
             const data = await response.json()
-            return data.results
+            return data
         }
-        apiConsuming().then(setData)
+
+        apiConsuming().then(setData).then(console.log(url, pages))
 
         // fetch(url, options)
         //     .then(response => response.json())
         //     .then(response => setData(response))
         //     .then(console.log(data))
         //     .catch(err => console.log(err));
-    }, [data]);
+    }, [data, pages]);
 
     return data
 }

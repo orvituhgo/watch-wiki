@@ -8,7 +8,7 @@ import Movies from './pages/Movies.js'
 import Series from './pages/Series.js'
 import Animes from './pages/Animes.js'
 import Cadastro from './pages/Cadastro.js'
-
+import Details from './pages/Details.js'
 
 function App() {
   return (
@@ -23,6 +23,9 @@ function App() {
             <Route path='series' element={<Series />}></Route>
             <Route path='animes' element={<Animes />}></Route>
             <Route path='cadastro' element={<Cadastro />}></Route>
+            <Route path='movies/:id' element={<Details />}></Route>
+            <Route path='series/:id' element={<Details />}></Route>
+            <Route path='animes/:id' element={<Details />}></Route>
           </Routes>
         </Container>
       </Router>

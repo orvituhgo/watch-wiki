@@ -1,5 +1,5 @@
 import Carrosel from '../components/molecules/Carrosel.js'
-import Api from '../utils/Api.js'
+import Api from '../services/Api.js'
 
 export default function Series() {
 

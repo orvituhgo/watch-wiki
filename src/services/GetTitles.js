@@ -10,8 +10,7 @@ export default function Api(pages) {
                 'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
             }
         }
-    };
-
+    }
 
     const apiConsuming = useCallback(async () => {
         const url = (pages) => {

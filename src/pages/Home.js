@@ -1,6 +1,6 @@
 import Carrosel from '../components/molecules/Carrosel.js'
 import News from '../components/molecules/News.js'
-import Api from '../services/Api.js'
+import getTitles from '../services/GetTitles.js'
 
 
 
@@ -8,11 +8,12 @@ export default function Home() {
 
     const data = []
     for (let i = 1; i <= 10; i++) {
-        const temp = Api(i).results
+        const temp = getTitles(i).results
         if (temp) {
             data.push(...temp)
         }
     }
+    console.log(data)
     console.log('redenrizou')
 
     // const movies = data.filter((item) => !item.titleType.isSeries && !item.titleType.isEpisode && item.primaryImage))

@@ -18,7 +18,7 @@ export default function CarroselContainer({ carroselTitle, data, type, ...props 
             {data && data.map((item) => {
                 if (type === 'movies') {
                     if (!item.titleType.isSeries && !item.titleType.isEpisode && item.primaryImage) {
-                        return <Link key={item.id} to={`movies/${item.id}`}><img className={style.carroselItem} key={item.id} src={item.primaryImage.url} alt={item.titleText.text}></img></Link>
+                        return <Link key={item.id} to={window.location.pathname === '/movies' ? `/${item.id}` : `movies/${item.id}`}><img className={style.carroselItem} key={item.id} src={item.primaryImage.url} alt={item.titleText.text}></img></Link>
                     }
                 }
                 if (type === 'series') {

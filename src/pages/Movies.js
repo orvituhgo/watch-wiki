@@ -1,9 +1,9 @@
 import Carrosel from '../components/molecules/Carrosel.js'
-import Api from '../services/Api.js'
+import getTitles from '../services/GetTitles.js'
 
 export default function Series() {
 
-    const data = Api()
+    const data = getTitles(1)
     const movies = data.filter((item) => !item.titleType.isSeries && !item.titleType.isEpisode && item.primaryImage)
 
     return (

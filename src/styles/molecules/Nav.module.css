@@ -41,6 +41,10 @@
     text-align: center;
 }
 
+.searchBar::placeholder {
+    font-family: 'Exo', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .searchButton {
     display: flex;
     align-items: center;

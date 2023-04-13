@@ -13,8 +13,8 @@ import Details from './pages/Details.js'
 function App() {
   return (
     <>
-      <Logo />
       <Router>
+        <Logo />
         <Nav />
         <Container>
           <Routes>
@@ -23,9 +23,9 @@ function App() {
             <Route path='series' element={<Series />}></Route>
             <Route path='animes' element={<Animes />}></Route>
             <Route path='cadastro' element={<Cadastro />}></Route>
-            <Route path='movies/:id' element={<Details />}></Route>
-            <Route path='series/:id' element={<Details />}></Route>
-            <Route path='animes/:id' element={<Details />}></Route>
+            <Route path='movies/:titleId' element={<Details />}></Route>
+            <Route path='series/:titleId' element={<Details />}></Route>
+            <Route path='animes/:titleId' element={<Details />}></Route>
           </Routes>
         </Container>
       </Router>

@@ -1,22 +1,27 @@
 import getTitlesId from '../services/GetTitlesId'
 import CardDetails from '../components/molecules/CardDetails'
-//import styles from '../styles/pages/Details.module.css'
-
+import { useParams } from 'react-router-dom'
 
 export default function Details() {
-    const idTitle = window.location.pathname.slice(8)
+    const idTitle = useParams().titleId
     const titleInfo = []
-    const temp = getTitlesId(idTitle).results
-    if (temp) {
-        titleInfo.push(temp)
+    const data = getTitlesId(idTitle).results
+    if (data) {
+        titleInfo.push(data)
     }
-    console.log(temp)
-    console.log(titleInfo)
-
-    const src = titleInfo ? titleInfo.map((item) => item.primaryImage.url) : null
+    const { primaryImage, titleText, plot, ratingsSummary, releaseDate } = data ? data : {}
+    console.log('renderizou')
     return (
         <>
-            <CardDetails url={src} altText={'placeholder'} titleTitl={'placeholder'} titleDescription={'placeholder'} />
+            {data && primaryImage && titleText && plot && ratingsSummary && releaseDate && (<CardDetails
+                src={primaryImage.url} altText={`View of ${titleText.text} scene`}
+                titleTitle={titleText.text}
+                titleDescription={plot.plotText.plainText}
+                rating={ratingsSummary.aggregateRating || 'not rated enough'}
+                releaseDay={releaseDate.day}
+                releaseMonth={releaseDate.month}
+                releaseYear={releaseDate.year}
+            />)}
         </>
     )
 }

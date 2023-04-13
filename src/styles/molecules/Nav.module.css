@@ -65,4 +65,8 @@
     .searchBar {
         width: 200px;
     }
+
+    .searchBar::placeholder {
+        font-size: 0.9em;
+    }
 }

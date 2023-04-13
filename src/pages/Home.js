@@ -5,7 +5,6 @@ import getTitles from '../services/GetTitles.js'
 
 
 export default function Home() {
-
     const data = []
     for (let i = 1; i <= 10; i++) {
         const temp = getTitles(i).results

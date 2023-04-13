@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 
-export default function Api(pages) {
+export default function GetTitles(pages) {
     const [data, setData] = useState([])
     const options = () => {
         return {

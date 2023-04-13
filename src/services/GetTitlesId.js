@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 
-export default function GetTitles(id) {
+export default function GetTitlesId(id) {
     const [data, setData] = useState([])
     const options = () => {
         return {

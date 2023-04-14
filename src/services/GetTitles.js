@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
+import apiKey from './ApiKey.js'
 
 export default function GetTitles(pages, type) {
     const [data, setData] = useState([])
@@ -6,7 +7,7 @@ export default function GetTitles(pages, type) {
         return {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': '2e91618b67msh7bf96925786bf29p10a260jsn73b34b1f0ef8',
+                'X-RapidAPI-Key': apiKey,
                 'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
             }
         }

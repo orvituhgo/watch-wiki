@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 export default function CarroselContainer({ carroselTitle, data, type, ...props },) {
     const carousel = useRef(null);
+    const pathing = window.location.pathname
     return (<section className={`${style.container}  ${style[props.custom]}`}>
         <h2 className={style.carroselTitle}>{carroselTitle}</h2>
         {!props.custom && (
@@ -16,24 +17,44 @@ export default function CarroselContainer({ carroselTitle, data, type, ...props 
         )}
         <div className={style.carrosel} ref={carousel}>
             {data && data.map((item) => {
-                if (type === 'movies') {
-                    if (!item.titleType.isSeries && !item.titleType.isEpisode && item.primaryImage) {
-                        return <Link key={item.id} to={window.location.pathname === '/movies' ? `${window.location.pathname}/${item.id}` : `movies/${item.id}`}>
-                            <img className={style.carroselItem} key={item.id} src={item.primaryImage.url} alt={item.titleText.text}>
-                            </img>
-                        </Link>
-                    }
-                }
-                if (type === 'series') {
-                    if (item.titleType.isSeries && !item.titleType.isEpisode && item.primaryImage) {
-                        return <Link key={item.id} to={window.location.pathname === '/series' ? `${window.location.pathname}/${item.id}` : `series/${item.id}`}>
-                            <img className={style.carroselItem} key={item.id} src={item.primaryImage.url} alt={item.titleText.text}>
-                            </img>
-                        </Link>
-                    }
-                }
-                return null
+                // if (type === 'movies') {
+                // if (item.titleType.isSeries && !item.titleType.isEpisode && item.primaryImage) {
+                return <Link
+                    key={item.id}
+                    to={pathing === '/movies'
+                        || pathing === '/series'
+                        || pathing === '/animes'
+                        ? pathing + `/${item.id}`
+                        : pathing}>
+                    <img
+                        className={style.carroselItem}
+                        key={item.id}
+                        src={item.primaryImage.url}
+                        alt={item.titleText.text}>
+                    </img>
+                </Link>
+                // }
+                // }
             })}
-        </div>
-    </section >)
+        </div >
+    </section >
+    )
 }
+
+
+                // if (type === 'series') {
+                // if (item.titleType.isSeries && !item.titleType.isEpisode && item.primaryImage) {
+                //     return <Link
+                //         key={item.id}
+                //         to={window.location.pathname === '/series' ? `${window.location.pathname}/${item.id}` : `series/${item.id}`}>
+                //         <img
+                //             className={style.carroselItem}
+                //             key={item.id}
+                //             src={item.primaryImage.url}
+                //             alt={item.titleText.text}>
+                //         </img>
+                //     </Link>
+                // }
+            // }
+
+            // })}

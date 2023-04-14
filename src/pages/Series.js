@@ -1,14 +1,18 @@
 import Carrosel from '../components/molecules/Carrosel.js'
-import getTitles from '../services/GetTitles.js'
+import getList from '../services/GetList.js';
 
 export default function Series() {
-
-    const data = getTitles(1).results
-    // const series = data.filter((item) => item.titleType.isSeries && !item.titleType.isEpisode && item.primaryImage)
+    const series = getList()[1]
+    // for (let i = 1; i < 100; i++) {
+    //     const temp = getTitles(i, 'tvSeries')
+    //     if (temp) {
+    //         series.push(...temp)
+    //     }
+    // }
 
     return (
         <div>
-            {data && (<Carrosel data={data} type='series' custom="full_size" carroselTitle="SERIES" />)}
+            {series && (<Carrosel data={series} type='series' custom="full_size" carroselTitle="SERIES" />)}
         </div >
     );
 }

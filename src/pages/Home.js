@@ -1,29 +1,19 @@
 import Carrosel from '../components/molecules/Carrosel.js'
 import News from '../components/molecules/News.js'
-import getTitles from '../services/GetTitles.js'
-
-
+import getList from '../services/GetList.js'
 
 export default function Home() {
-    const data = []
-    for (let i = 1; i <= 10; i++) {
-        const temp = getTitles(i).results
-        if (temp) {
-            data.push(...temp)
-        }
-    }
-    console.log(data)
-    console.log('redenrizou')
+    const data = getList()
 
-    // const movies = data.filter((item) => !item.titleType.isSeries && !item.titleType.isEpisode && item.primaryImage))
+    // const movies = data.filter((item) => !item.titleType.id === 'movie'&& item.primaryImage))
     // const series = data.filter((item) => item.titleType.isSeries && !item.titleType.isEpisode && item.primaryImage)
 
     return (
         <div>
             <News />
-            {data && (<Carrosel data={data} type='movies' carroselTitle='MOVIES' />)}
-            {data && (<Carrosel data={data} type='series' carroselTitle='SERIES' />)}
-            <Carrosel carroselTitle='ANIMES' />
+            {data[0] && (<Carrosel data={data[0]} type='movie' carroselTitle='MOVIES' />)}
+            {data[1] && (<Carrosel data={data[1]} type='tvSeries' carroselTitle='SERIES' />)}
+            {data[2] && (<Carrosel data={data[2]} type='videoGame' carroselTitle='ANIMES' />)}
         </div >
     );
 

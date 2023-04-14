@@ -1,0 +1,8 @@
+.container {
+    position: absolute;
+    right: 3%;
+    z-index: 3;
+    height: 30px;
+    width: 40px;
+    background-color: whitesmoke;
+}

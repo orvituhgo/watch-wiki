@@ -1,6 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 
-export default function GetTitles(pages) {
+export default function GetTitles(pages, type) {
     const [data, setData] = useState([])
     const options = () => {
         return {
@@ -18,8 +18,9 @@ export default function GetTitles(pages) {
         }
         const response = await fetch(url(pages), options())
         const data = await response.json()
-        setData(data)
-    }, [pages])
+        const dataFiltered = data ? data.results.filter((item) => item.titleType.id === type && item.primaryImage !== null) : []
+        setData(dataFiltered)
+    }, [pages, type])
 
     useEffect(() => {
         apiConsuming()
@@ -32,3 +33,24 @@ export default function GetTitles(pages) {
 
     return data
 }
+
+//types :
+// {
+//     "results": [
+//       null,
+//       "movie",
+//       "musicVideo",
+//       "podcastEpisode",
+//       "podcastSeries",
+//       "short",
+//       "tvEpisode",
+//       "tvMiniSeries",
+//       "tvMovie",
+//       "tvPilot",
+//       "tvSeries",
+//       "tvShort",
+//       "tvSpecial",
+//       "video",
+//       "videoGame"
+//     ]
+//   }

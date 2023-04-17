@@ -19,7 +19,7 @@ export default function GetTitles(pages, type) {
         }
         const response = await fetch(url(pages), options())
         const data = await response.json()
-        const dataFiltered = data ? data.results.filter((item) => item.titleType.id === type && item.primaryImage !== null) : []
+        const dataFiltered = await data ? data.results.filter((item) => item.titleType.id === type && item.primaryImage !== null) : []
         setData(dataFiltered)
     }, [pages, type])
 

@@ -2,6 +2,7 @@ import getTitles from '../services/GetTitles'
 
 const getList = () => {
     const data = [[], [], []]
+
     for (let i = 1; i <= 100; i++) {
         const movies = getTitles(i, 'movie')
         const series = getTitles(i, 'tvSeries')

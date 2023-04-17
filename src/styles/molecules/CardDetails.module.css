@@ -81,3 +81,7 @@
     width: 300px;
     border-radius: 5px;
 }
+
+.container aside h2 {
+    text-align: center;
+}

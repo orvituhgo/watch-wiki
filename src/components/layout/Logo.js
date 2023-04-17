@@ -1,4 +1,4 @@
-import style from '../styles/molecules/Logo.module.css'
+import style from '../../styles/layout/Logo.module.css'
 
 export default function ToolbarMenu() {
     return (

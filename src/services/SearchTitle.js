@@ -3,7 +3,7 @@ import { useEffect, useState, useCallback } from "react";
 import apiKey from './ApiKey.js'
 
 
-export default function GetTitlesId(id) {
+export default function SearchTitle(title) {
     const [data, setData] = useState([])
     const [removeLoader, setRemoveLoader] = useState(false)
 
@@ -19,14 +19,14 @@ export default function GetTitlesId(id) {
 
 
     const apiConsuming = useCallback(async () => {
-        const url = (id) => {
-            return `https://moviesdatabase.p.rapidapi.com/titles/${id}?info=base_info`
+        const url = (title) => {
+            return `https://moviesdatabase.p.rapidapi.com/titles/search/title/${title}?exact=false`
         }
-        const response = await fetch(url(id), options())
+        const response = await fetch(url(title), options())
         const data = await response.json()
         setData(data)
         setRemoveLoader(true)
-    }, [id])
+    }, [title])
 
     useEffect(() => {
         apiConsuming()

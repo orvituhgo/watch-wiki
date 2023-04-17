@@ -1,0 +1,15 @@
+.loading_container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading {
+    width: 200px;
+}
+
+.loading.half_size {
+    width: 100px;
+}

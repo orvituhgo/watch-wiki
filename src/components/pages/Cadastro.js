@@ -1,4 +1,4 @@
-import '../styles/pages/Home.module.css'
+import '../../styles/pages/Home.module.css'
 
 export default function Cadastro() {
     <div >

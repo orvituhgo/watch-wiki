@@ -1,12 +1,17 @@
-import style from '../../styles/molecules/Carrosel.module.css'
-import Arrow from '../atoms/Arrow.js'
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
+
+import style from '../../styles/molecules/Carrosel.module.css'
+import Arrow from '../atoms/Arrow.js'
+// import Loading from '../layout/Loading';
+// import getList from '../../services/GetList';
 
 
 export default function CarroselContainer({ carroselTitle, data, type, ...props },) {
+    // const { removeLoader } = getList()
     const carousel = useRef(null);
-    const pathing = window.location.pathname
+    // const pathing = useLocation().pathname
     return (<section className={`${style.container}  ${style[props.custom]}`}>
         <h2 className={style.carroselTitle}>{carroselTitle}</h2>
         {!props.custom && (
@@ -21,11 +26,7 @@ export default function CarroselContainer({ carroselTitle, data, type, ...props 
                 // if (item.titleType.isSeries && !item.titleType.isEpisode && item.primaryImage) {
                 return <Link
                     key={item.id}
-                    to={pathing === '/movies'
-                        || pathing === '/series'
-                        || pathing === '/animes'
-                        ? pathing + `/${item.id}`
-                        : pathing}>
+                    to={`/details/${item.id}`}>
                     <img
                         className={style.carroselItem}
                         key={item.id}
@@ -40,21 +41,3 @@ export default function CarroselContainer({ carroselTitle, data, type, ...props 
     </section >
     )
 }
-
-
-                // if (type === 'series') {
-                // if (item.titleType.isSeries && !item.titleType.isEpisode && item.primaryImage) {
-                //     return <Link
-                //         key={item.id}
-                //         to={window.location.pathname === '/series' ? `${window.location.pathname}/${item.id}` : `series/${item.id}`}>
-                //         <img
-                //             className={style.carroselItem}
-                //             key={item.id}
-                //             src={item.primaryImage.url}
-                //             alt={item.titleText.text}>
-                //         </img>
-                //     </Link>
-                // }
-            // }
-
-            // })}

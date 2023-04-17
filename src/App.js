@@ -1,14 +1,14 @@
-import Logo from './layout/Logo'
-import Nav from './layout/Nav'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Container from './layout/Container.js'
 
-import Home from './pages/Home.js'
-import Movies from './pages/Movies.js'
-import Series from './pages/Series.js'
-import Animes from './pages/Animes.js'
-import Cadastro from './pages/Cadastro.js'
-import Details from './pages/Details.js'
+import Container from './components/layout/Container.js'
+import Logo from './components/layout/Logo'
+import Nav from './components/layout/Nav'
+import Home from './components/pages/Home.js'
+import Movies from './components/pages/Movies.js'
+import Series from './components/pages/Series.js'
+import Animes from './components/pages/Animes.js'
+import Cadastro from './components/pages/Cadastro.js'
+import Details from './components/pages/Details.js'
 
 function App() {
   return (
@@ -23,9 +23,7 @@ function App() {
             <Route path='series' element={<Series />}></Route>
             <Route path='animes' element={<Animes />}></Route>
             <Route path='cadastro' element={<Cadastro />}></Route>
-            <Route path='movies/:titleId' element={<Details />}></Route>
-            <Route path='series/:titleId' element={<Details />}></Route>
-            <Route path='animes/:titleId' element={<Details />}></Route>
+            <Route path='details/:titleId' element={<Details />}></Route>
           </Routes>
         </Container>
       </Router>

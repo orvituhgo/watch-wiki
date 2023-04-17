@@ -16,11 +16,53 @@
     box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.liButton:hover,
+.link:hover {
+    /* background-color: #6C2BAD; */
+    background-color: #412261;
+    color: #F6F794;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.liButton.inline {
+    background-color: #412261;
+    border: 1px solid white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+}
+
 .link {
+    display: flex;
     text-align: center;
+    align-items: center;
+    justify-content: center;
     margin: auto;
     text-decoration: none;
-    color: #6c2bad;
     width: 100%;
+    height: 100%;
     font: normal 400 16px Oswald, Helvetica, sans-serif;
+}
+
+.link.inline {
+    margin: auto;
+    text-decoration: none;
+    color: #F6F794;
+    width: 100%;
+    /* font-family: 'Exo', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    font: normal 500 16px 'Exo', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.liButton.inline:hover,
+.link.inline:hover {
+    background-color: #F6F794;
+    color: #6C2BAD;
+}
+
+.link:checked,
+.liButton:checked {
+    background-color: 412261;
 }

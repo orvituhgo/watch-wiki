@@ -55,9 +55,16 @@
     margin: auto 10px;
     box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.25);
     border-radius: 4px;
-    width: 200px;
-    height: 280px;
+    min-width: 200px;
+    min-height: 280px;
     flex-shrink: 0;
+    transition: all 200ms ease-out;
+}
+
+.carroselItem:hover {
+    transform: scale(1.05) rotate(-2deg);
+    cursor: pointer;
+    z-index: 3;
 }
 
 .full_size {

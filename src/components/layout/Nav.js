@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
+import { FaBars } from 'react-icons/fa'
+
 
 import Loading from './Loading.js'
 import searchTitle from '../../services/SearchTitle.js'
@@ -9,6 +11,7 @@ import styles from '../../styles/layout/Nav.module.css'
 
 export default function Nav() {
     const [search, setSearch] = useState('')
+    const [hideMenu, setHideMenu] = useState(false)
     let removeLoader = false
 
     const url = useLocation().pathname
@@ -32,9 +35,28 @@ export default function Nav() {
         console.log(titleClicked)
     }
 
+    function handleClickMenu() {
+        setHideMenu(!hideMenu)
+    }
+
+    function handleClickInlineButton() {
+        setHideMenu(!hideMenu)
+    }
+
 
     return (
         <nav className={styles.navBar}>
+            <div className={styles.containerH}>
+                <button onClick={handleClickMenu} className={`${styles.buttonMenuH} ${hideMenu ? styles.buttonMenuHClicked : ''}`}><FaBars /></button>
+                {hideMenu && (<aside className={styles.asideH}>
+                    <ul className={styles.menuH}>
+                        <Button onClick={handleClickInlineButton} custom='inline' titleButton='HOME' pathing='/' />
+                        <Button onClick={handleClickInlineButton} custom='inline' titleButton='MOVIES' pathing='/movies' />
+                        <Button onClick={handleClickInlineButton} custom='inline' titleButton='SERIES' pathing='/series' />
+                        <Button onClick={handleClickInlineButton} custom='inline' titleButton='ANIMES' pathing='/animes' />
+                    </ul>
+                </aside>)}
+            </div>
             <ul className={styles.menu}>
                 <Button titleButton='HOME' pathing='/' />
                 <Button titleButton='MOVIES' pathing='/movies' />

@@ -26,9 +26,7 @@ jobs:
       with:
         server: vitorhugodev.tk
         username: ${{ secrets.username }}
-        # host: vitorhugodev.tk
-        # user: ${{ secrets.username }}
         password: ${{ secrets.password }}
         local-dir: ./build/
-        dry-run: true
+        # dry-run: true
       

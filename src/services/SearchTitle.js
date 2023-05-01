@@ -1,7 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
 
-import apiKey from './ApiKey.js'
-
+const apiKey = process.env.REACT_APP_MOVIE_API_KEY
 
 export default function SearchTitle(title) {
     const [data, setData] = useState([])

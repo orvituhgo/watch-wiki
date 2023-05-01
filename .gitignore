@@ -17,6 +17,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.env
 ApiKey.js
 Api.js
 npm-debug.log*

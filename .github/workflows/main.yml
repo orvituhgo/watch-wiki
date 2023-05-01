@@ -22,14 +22,13 @@ jobs:
         npm run build
     
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.1
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: vitorhugodev.tk
         username: ${{ secrets.username }}
         password: ${{ secrets.password }}
       
     # exclude: |
-    #   **/.*/**
-    #   **/.git*
+    #   #   **/.git*
     #   **/.git*/**
     #   **/node_modules/**

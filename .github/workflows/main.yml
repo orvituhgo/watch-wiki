@@ -27,4 +27,4 @@ jobs:
         server: vitorhugodev.tk
         username: ${{ secrets.username }}
         password: ${{ secrets.password }}
-        server-dir: /home/wanderley/vitorhugodev.tk/
+        server-dir: /vitorhugodev.tk/

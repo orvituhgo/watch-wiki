@@ -22,12 +22,12 @@ jobs:
         npm run build
     
     - name: 📂 Sync files
-      # uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-      uses: sebastianpopp/ftp-action@releases/v2
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        # server: vitorhugodev.tk
-        # username: ${{ secrets.username }}
-        host: vitorhugodev.tk
-        user: ${{ secrets.username }}
+        server: vitorhugodev.tk
+        username: ${{ secrets.username }}
+        # host: vitorhugodev.tk
+        # user: ${{ secrets.username }}
         password: ${{ secrets.password }}
+        local-dir: ./build/
       

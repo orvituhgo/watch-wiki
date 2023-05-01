@@ -24,10 +24,11 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ftp.wanderley.dev
+        server: vitorhugodev.tk
         username: ${{ secrets.username }}
         # host: vitorhugodev.tk
         # user: ${{ secrets.username }}
         password: ${{ secrets.password }}
         local-dir: ./build/
+        dry-run: true
       

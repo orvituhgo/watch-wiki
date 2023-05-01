@@ -27,3 +27,9 @@ jobs:
         server: vitorhugodev.tk
         username: ${{ secrets.username }}
         password: ${{ secrets.password }}
+      
+    exclude: |
+      **/.*/**
+      **/.git*
+      **/.git*/**
+      **/node_modules/**

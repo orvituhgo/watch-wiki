@@ -24,7 +24,8 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.1.0
       with:
-        server: vitorhugodev.tk
+        # server: vitorhugodev.tk
+        server: ftp.wanderley.dev
         username: ${{ secrets.username }}
         password: ${{ secrets.password }}
         local-dir: ./build/

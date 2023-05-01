@@ -25,7 +25,9 @@ jobs:
       # uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       uses: sebastianpopp/ftp-action@releases/v2
       with:
-        server: vitorhugodev.tk
-        username: ${{ secrets.username }}
+        # server: vitorhugodev.tk
+        # username: ${{ secrets.username }}
+        host: vitorhugodev.tk
+        user: ${{ secrets.username }}
         password: ${{ secrets.password }}
       

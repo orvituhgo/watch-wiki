@@ -1,0 +1,7 @@
+{
+  "window.zoomLevel": 0,
+  "editor.fontSize": 22,
+  "prettier.configPath": "./.prettierrc",
+  "html.format.wrapLineLength": 200,
+  "notebook.output.fontSize": 16
+}

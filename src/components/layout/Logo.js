@@ -1,16 +1,15 @@
-import style from '../../styles/layout/Logo.module.css'
+import style from '../../styles/layout/Logo.module.css';
 
 export default function ToolbarMenu() {
-    return (
-        <>
-            <div className={style.topBar}>
-            </div>
-            <section className={style.section}>
+  return (
+    <>
+      <div className={style.topBar} />
+      <section className={style.section}>
 
-                <div className={style.horizontalLine}></div>
-                <h1 className={style.title}> WATCH HUB</h1>
-                <div className={style.horizontalLine}></div>
-            </section>
-        </>
-    )
-} 
+        <div className={style.horizontalLine} />
+        <h1 className={style.title}> WATCH HUB</h1>
+        <div className={style.horizontalLine} />
+      </section>
+    </>
+  );
+}

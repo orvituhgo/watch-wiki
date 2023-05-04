@@ -1,21 +1,20 @@
-import getTitles from '../services/GetTitles'
+import getTitles from './GetTitles';
 
 const getList = () => {
-    const data = [[], [], []]
+  const data = [[], [], []];
 
-    for (let i = 1; i <= 100; i++) {
-        const movies = getTitles(i, 'movie')
-        const series = getTitles(i, 'tvSeries')
-        const animes = getTitles(i, 'videoGame')
-        if (movies && series && animes) {
-            data[0].push(...movies)
+  for (let i = 1; i <= 100; i += 1) {
+    const movies = getTitles(i, 'movie');
+    const series = getTitles(i, 'tvSeries');
+    const animes = getTitles(i, 'videoGame');
+    if (movies && series && animes) {
+      data[0].push(...movies);
 
-            data[1].push(...series)
+      data[1].push(...series);
 
-            data[2].push(...animes)
-
-        }
+      data[2].push(...animes);
     }
-    return data ? data : [[], [], []]
-}
-export default getList 
+  }
+  return data || [[], [], []];
+};
+export default getList;

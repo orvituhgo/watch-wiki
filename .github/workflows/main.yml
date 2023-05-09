@@ -11,10 +11,10 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
 
-    - name: Use Node.js 18
+    - name: Use Node.js 16
       uses: actions/setup-node@v2
       with:
-        node-version: '18'
+        node-version: '16'
       
     - name: 🔨 Build Project
       run: |
@@ -28,6 +28,7 @@ jobs:
         server: ftp.wanderley.dev
         username: ${{ secrets.username }}
         password: ${{ secrets.password }}
+        protocol: ${{ secrets.protocol}}
         local-dir: ./build/
         server-dir: ./vitorhugodev.tk/
 

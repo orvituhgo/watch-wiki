@@ -1,6 +1,7 @@
 {
   "name": "watch-wiki",
   "version": "0.1.0",
+  "homepage": "http://vitorhugodev.tk/",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
@@ -8,7 +9,6 @@
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "http://vitorhugodev.tk/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

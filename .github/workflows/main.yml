@@ -29,5 +29,5 @@ jobs:
         username: ${{ secrets.username }}
         password: ${{ secrets.password }}
         local-dir: ./build/
-        # dry-run: true
+
       

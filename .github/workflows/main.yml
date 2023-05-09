@@ -29,5 +29,6 @@ jobs:
         username: ${{ secrets.username }}
         password: ${{ secrets.password }}
         local-dir: ./build/
+        server-dir: ./vitorhugodev.tk/
 
       

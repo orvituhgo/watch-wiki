@@ -29,7 +29,7 @@ jobs:
         username: ${{ secrets.username }}
         password: ${{ secrets.password }}
         # protocol: ${{ secrets.protocol}}
-        local-dir: ./build/
+        # local-dir: ./build/
         # server-dir: ./vitorhugodev.tk/
 
       

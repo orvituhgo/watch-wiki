@@ -30,6 +30,8 @@ jobs:
         password: ${{ secrets.password }}
         # protocol: ${{ secrets.protocol}}
         local-dir: ./build/
+        exclue: |
+          **/.env*
         # server-dir: ./vitorhugodev.tk/
 
       
